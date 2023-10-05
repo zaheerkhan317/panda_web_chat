@@ -1,0 +1,505 @@
+#chat-body {
+	height: 80vh;
+	overflow-y: scroll;
+	
+}
+
+#msg-body {
+	background-image: url('../img/peakpx.jpg');
+    background-size: cover; /* Adjust as needed */
+    background-repeat: no-repeat;
+	padding-top: 40px;
+	height: 60vh;
+	overflow-y: scroll;
+}
+
+
+#create-msg-form {
+	display: flex;
+	align-items: center;
+}
+
+#create-msg-form .col-lg-12,
+#create-msg-form .col-lg-2 {
+	flex: 1;
+}
+
+#create-msg-form .col-lg-2:last-child {
+	margin-left: 5px;
+}
+
+.chat-item{
+	display: flex;
+	align-items: center;
+	max-width: 100%;
+	border-radius: 13px;
+	margin: 5px;
+	border-bottom: 1px solid #c2c2c2;
+	background-color: #ffffff;
+	color: #000000;
+	cursor: pointer;
+	padding: 12px;
+	position: relative;
+	transition: background-color 0.5s;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chat-item:hover{
+	background-color: #a4efbc;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* modified */
+.new-msg {
+    animation: blinking 1s infinite;
+    background-color: rgba(173, 216, 230, 0.8); /* Lighter shade of blue color */
+}
+
+@keyframes blinking {
+    0%, 100% {
+        background-color: rgba(173, 216, 230, 0.8); /* Lighter shade of blue color */
+    }
+    50% {
+        background-color: transparent;
+    }
+}
+
+/* <!-- modified --> */
+
+
+
+
+.new-msg-count{
+	position: absolute;
+	top: 12px;
+	right: 6px;
+	border-radius: 50%;
+	background-color: #2ecc71;
+	color: #ffffff;
+	min-height: 22px;
+	min-width: 22px;
+	text-align: center;
+	height: auto;
+	font-family: arial;
+	line-height: 22px;
+}
+
+.chat-item-img{
+	width: 60px;
+	height: 60px;
+	
+	position: relative;
+	z-index: 0;
+}
+
+.chat-item-users{
+	display: inline;
+	font-size: 17px;
+	margin-left: 12px;
+}
+
+.chat-select {
+    background-color: #c2c2c2;
+    color: black; /* Set text color to make it readable on the black background */
+}
+
+.no-chat{
+	text-align: center;
+	margin-bottom: 16px;
+	padding: 7px 0px;
+	clear: both;
+}
+
+
+
+.msg-item{
+	position: relative;
+	margin-bottom: 16px;
+	padding: 7px 0px;
+	clear: both;
+}
+
+.msg-item-img{
+	height: 60px !important;
+	width: 60px !important;
+	position: absolute;
+	display: inline !important;
+	margin-left: 10px;
+	top: 0px;
+	z-index: 1;
+}
+
+.msg-item-txt{
+	position: relative;
+	display: inline-block;
+	margin-left: 77px;
+	border: 1px solid #c2c2c2;
+	border-radius: 7px;
+	padding: 10px 12px;
+	max-width: 50%;
+	background-color: #ffffff;
+	margin-bottom: 12px;
+}
+
+.msg-item-txt::before{
+	content: " ";
+	width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-right: 10px solid;
+	border-right-color: inherit;
+	position: absolute;
+	left: -10px;
+	top: 10px;
+}
+
+.attachment-container {
+    display: inline-block;
+    max-width: 50%; /* Adjust the width as needed */
+    text-align: right; /* Align content to the right */
+}
+
+.attachment-container img,
+.attachment-container video {
+    max-width: 100%; /* Make the images and videos responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 4px;
+    border: 1px solid #c2c2c2;
+    margin-bottom: 12px;
+}
+
+
+
+
+.tick-container {
+    position: absolute;
+    top: 50%;
+	color: 0000;
+    transform: translateY(-50%);
+    left: -24px; /* Adjust this value to position the tick icon accordingly */
+}
+
+.tick-container .glyphicon {
+    font-size: 18px;
+    color: #4CAF50;
+}
+
+
+
+
+
+
+.me{
+	margin-bottom: 60px !important;
+}
+
+.me .msg-item-img{
+	right: 0;
+}
+
+.me .msg-item-txt{
+	background-color: #E0FFF1; /* Light green background color */
+    color: #000000;
+	float: right;
+	margin-right: 77px;
+}
+
+.me .msg-item-txt::before{
+	border-right: none;
+	border-left: 10px solid;
+	left: auto;
+	right: -10px;
+	border-left-color: #3097d1;
+}
+
+.msg-item-data{
+	position: relative;
+	display: inline-block;
+	color: #898989;
+	font-size: 12px;
+	text-align: right;
+	margin-top: 4px;
+	right: -2px;
+	bottom: -7px;
+}
+
+.me .msg-item-data{
+	color: #808080;
+}
+
+#load_more {
+	color: #3097d1;
+	cursor: pointer;
+	text-align: center;
+	display: block;
+	margin: 0 auto;
+	box-shadow: 0px 3px 14px -12px #000;
+	padding: 7px 10px;
+	margin-top: -4px;
+	margin-bottom: 10px;
+	position: absolute;
+	top: 47px;
+	left: 40px;
+	right: 40px;
+}
+
+
+.profile-pic{
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	margin: 0 auto;
+	display: block;
+	margin-bottom: 20px;
+}
+
+
+.emoji-button {
+    position: absolute;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    top: 10px;
+    right: 30px;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 50%; /* Make the button round */
+    font-size: 24px;
+    cursor: pointer;
+    -webkit-text-stroke-width: 1px; /* Adjust border width as needed */
+    -webkit-text-stroke-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Styles for Emoji Toggle Box */
+/* Styles for Emoji Toggle Box */
+.emoji-toggle-box {
+position: absolute;
+top: -200px;
+right: 10px;
+background-color: #fff;
+border: 1px solid #ccc;
+border-radius: 5px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+display: none;
+max-width: 70%;
+max-height: 200px;
+overflow-y: auto;
+z-index: 2;
+}
+
+.emoji-toggle-box.active {
+display: block;
+}
+
+.emoji-toggle-content {
+padding: 10px;
+}
+
+.emoji {
+font-size: 24px;
+margin: 5px;
+cursor: pointer;
+}
+
+/* Styles for Tabs */
+.tabs {
+display: flex;
+overflow-x: auto; /* Allow horizontal scrolling for tabs */
+flex-wrap: nowrap; /* Prevent wrapping of tabs */
+max-width: 100%; /* Maximum width for the tabs */
+margin-bottom: 10px;
+height: 60px; /* Set a fixed height for the tabs */
+overflow-y: hidden; /* Hide vertical scrollbar */
+}
+
+.tab {
+cursor: pointer;
+padding: 5px 10px 5px 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+background-color: #f0f0f0;
+white-space: nowrap;
+margin: 5px 5px 5px 5px;
+}
+
+.tab:last-child {
+margin-right: 0;
+}
+
+.tab.active {
+background-color: #007bff;
+color: #fff;
+}
+
+
+/* Media query for smaller screens (max-width: 320px) */
+@media (max-width: 320px), (max-width: 375px ), (max-width: 425px ), (max-width: 768px ) {
+.tabs {
+flex-direction: row; /* Display tabs in a row */
+overflow-x: auto; /* Allow horizontal scrolling for tabs */
+overflow-y: hidden; /* Hide vertical scrollbar */
+align-items: center;
+height: auto;
+}
+
+.tab {
+margin: 5px;
+}
+}
+
+.tick {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.tick-icon {
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    margin-right: 5px;
+}
+
+.seen-tick .tick-icon {
+    opacity: 1;
+    transform: scale(1);
+	transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Add this to your CSS file */
+
+.user-status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.user-status-indicator.online {
+    background-color: green;
+}
+
+.user-status-indicator.offline {
+    background-color: red;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px; /* Adjust the spacing between the dot and the text as needed */
+}
+
+.online {
+    background-color: #2ecc71;
+}
+
+.offline {
+    background-color: #e74c3c;
+}
+
+
+.last-seen {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+	color: #8e8e8e;
+    font-size: 12px;
+}
+
+/* Add your desired styles for the dropdown items */
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1.25rem;
+    clear: both;
+    font-weight: normal;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+}
+
+
+/* Add this CSS to your stylesheet */
+.draggable-content {
+    cursor: grab;
+    touch-action: pan-x;
+    user-select: none;
+}
+
+.draggable-content:active {
+    cursor: grabbing;
+}
+
+/* Restrict vertical movement */
+.draggable-content {
+    touch-action: pan-x;
+    user-select: none;
+	
+}
+
+/* Disable text selection while dragging */
+.draggable-content {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.hide-name strong {
+    display: none;
+}
+
+.dragged-message {
+    background-color: #a8e6cf; /* Light green background color */
+    padding: 10px;
+	color: #000000; /* Add some padding for spacing */
+    border-radius: 5px; /* Optional: add rounded corners */
+	
+}
+
+.dragged-message.me {
+    background-color: #a8e6cf; /* Light green background color */
+    padding: 10px;
+	color: #000000; /* Add some padding for spacing */
+    border-radius: 5px; /* Optional: add rounded corners */
+}
+
+
+.panel-dragged-msg {
+    position: relative; /* Make it relative for positioning the close button */
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: red; /* Adjust the color as needed */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .close-btn:hover {
+    background-color: darkred; /* Adjust hover color as needed */
+  }
+
+
+
+
+ 
+
