@@ -11,12 +11,12 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
-    {
-        view()->composer('*', function ($view) {
-            $view->with('isOnline', Auth::check() ? session('is_online', false) : false);
-        });
-    }
+    public function boot(UrlGenerator $url)
+     {
+         if (env('APP_ENV') == 'production') {
+             $url->forceScheme('https');
+         }
+     }
 
     /**
      * Register any application services.
